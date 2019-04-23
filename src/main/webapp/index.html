@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello HTML</title>
+</head>
+<body>
+
+<form action="/test/api/user/add" method="post">
+    <h1>My app</h1>
+    <h3>Some cool text</h3>
+
+    <label>Введите данные</label>
+    <input type="text" name="name" placeholder="Имя" required autofocus>
+    <input type="number" name="age" placeholder="Возраст" required>
+
+    <div>
+        <label>
+            <input type="checkbox" value="remember-me" checked="checked">
+            Запомнить меня
+        </label>
+    </div>
+
+    <button id="send" type="submit">
+        Отправить
+    </button>
+
+    <ul class="list-group">
+        <li><a href="/test/api/user">Пользователи</a></li>
+        <li><a href="checkin.html">Зарегистрироваться</a></li>
+        <li><a href="forgot.html">Забыли пароль</a></li>
+    </ul>
+</form>
+
+</body>
+</html>
