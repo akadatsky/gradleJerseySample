@@ -1,5 +1,7 @@
 package com.akadatsky.api;
 
+import com.akadatsky.db.StudentDao;
+import com.akadatsky.model.Student;
 import com.akadatsky.model.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -18,6 +20,17 @@ public class UserApi {
 
     static {
         users.add(new User("test", 11));
+    }
+
+    @GET
+    @Path("/test")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response test() {
+        Student student = new Student("Ivan", 25);
+        StudentDao studentDao = new StudentDao();
+        studentDao.insert(student);
+        String result = gson.toJson(student);
+        return Response.status(Response.Status.OK).entity(result).build();
     }
 
     @GET
